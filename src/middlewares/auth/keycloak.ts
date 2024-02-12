@@ -27,15 +27,12 @@ const jwtDecode = createDecoder();
 
 export async function keycloakAuth(
   request: Express.Request,
-  securityName: string,
+  _securityName: string,
   _scopes?: string[],
 ) {
   if (process.env.NODE_ENV !== "production" && process.env.AUTH_BYPASS) {
     return { preferred_username: "bypassed" };
   }
-
-  if (securityName !== "bearerAuth")
-    throw new Error("ไม่ทราบวิธีการยืนยันตัวตน");
 
   const token = request.headers["authorization"]?.includes("Bearer ")
     ? request.headers["authorization"].split(" ")[1]
