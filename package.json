@@ -1,0 +1,41 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon",
+    "check": "tsc --noEmit",
+    "start": "node ./dist/app.js",
+    "format": "prettier --write .",
+    "build": "tsoa spec-and-routes && tsc",
+    "migration:generate": "typeorm-ts-node-commonjs migration:generate -d src/database/data-source.ts",
+    "migration:run": "typeorm-ts-node-commonjs migration:run -d src/database/data-source.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.5",
+    "@types/swagger-ui-express": "^4.1.6",
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.12.1",
+    "@tsoa/runtime": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fast-jwt": "^3.3.2",
+    "promise.any": "^2.0.6",
+    "reflect-metadata": "^0.2.1",
+    "swagger-ui-express": "^5.0.0",
+    "tsoa": "^6.0.1",
+    "typeorm-cli": "^1.0.7"
+  }
+}
