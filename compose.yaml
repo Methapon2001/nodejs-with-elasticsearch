@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    restart: always
+    environment:
+      - AUTH_REALM_URL=
+      - APP_HOST=0.0.0.0
+      - APP_PORT=3000
+      - ELASTICSEARCH_PROTOCOL=http
+      - ELASTICSEARCH_HOST=host.docker.internal
+      - ELASTICSEARCH_PORT=9200
+      - ELASTICSEARCH_INDEX=dev-index
+    extra_hosts:
+      - host.docker.internal:host-gateway
