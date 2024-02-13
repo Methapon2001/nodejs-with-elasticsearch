@@ -24,6 +24,7 @@ type DataRecord = {
   keyword: string[];
   content: string;
   summary: string;
+  url: string;
 };
 
 @Route("/api")
