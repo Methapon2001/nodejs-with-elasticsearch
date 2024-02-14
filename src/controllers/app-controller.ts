@@ -95,6 +95,7 @@ export class AppController extends Controller {
       index: ELASTICSEARCH_INDEX,
       id: data._id,
       doc: body,
+      refresh: "wait_for",
     });
     return data;
   }
